@@ -18,16 +18,25 @@ public class NextPermutation {
     }
 
     public void nextPermutation(int[] nums) {
-        int i = nums.length - 1;
-        while (i > 0) {
-            if (nums[i] > nums[i - 1]) {
+        int i = nums.length - 2;
+
+        while ( i >= 0) {
+            if (nums[i] < nums[i + 1]) {
                 break;
             }
             i--;
         }
 
-        i--;
-        swap(nums, i, nums.length - 1);
+        if (i == -1) {
+            reverse(nums, 0, nums.length - 1);
+            return;
+        }
+
+        int j = nums.length - 1;
+        while ( j >= i && nums[j] <= nums[i]) j--;
+
+        swap(nums, i, j);
+
         reverse(nums, i + 1, nums.length - 1);
     }
 
