@@ -1,9 +1,7 @@
 package org.example.arrays;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 /**
  *  <a href="https://leetcode.com/problems/subarray-sum-equals-k/description/">...</a>
